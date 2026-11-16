@@ -556,14 +556,24 @@ p.lifecycle-intro {
 }
 
 @media (max-width: 480px) {
+  .header-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .nav-list {
-    gap: 16px;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
   }
 
   .portfolio-card {
     padding: 16px;
   }
 }
+
 
 /* ==========================================================================
    13. Horizontal Rhythm & Element Spacing Enhancements
