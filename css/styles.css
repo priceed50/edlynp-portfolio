@@ -1,0 +1,1404 @@
+/**
+ * EdlynP Design Studio - Global Design System Tokens
+ * Capstone Project Phase 2 Production Build
+ * Core Specifications: Georgia Pro / Helvetica Neue / WCAG 4.5:1 Compliant Colors
+ */
+
+:root {
+  /* ==========================================================================
+     1. Brand Typography Anchor Stack
+     ========================================================================== */
+  /* Display Headings: Elegant serif with high contrast editorial pacing */
+  --font-display: "Georgia Pro", Georgia, "Times New Roman", serif;
+
+  /* Body Copy & Interface: Highly legible, clean, modern neo-grotesque sans-serif */
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Typography Micro-Adjustments */
+  --tracking-tight: -0.015em;
+  /* Pulls display headings together for custom logo feel */
+  --tracking-neutral: 0em;
+  /* Standard layout pacing */
+  --tracking-loose: 0.02em;
+  /* Opens Helvetica body text container paths for airiness */
+  --tracking-meta: 0.06em;
+  /* Highly legible spaced-out tracking for tiny labels */
+
+  --line-height-heading: 1.2;
+  /* Snug line height for stacked headers */
+  --line-height-body: 1.5;
+  /* 150% Line height for optimal reading flow */
+
+  /* ==========================================================================
+     2. Brand Color Palette Matrix (WCAG 4.5:1 High-Contrast Passing)
+     ========================================================================== */
+
+  /* ==========================================================================
+   ADDITIONAL COMPONENT TOKENS: GEMZ FITNESS PRODUCT ECOSYSTEM
+   ========================================================================== */
+
+  :root {
+    /* Core Brand Identity Anchors */
+    --gemz-pink: #ff007f;
+    /* Blazing neon command color for titles & CTAs */
+    --gemz-purple: #6a0dad;
+    /* Deep violet for horizontal sorting button pills */
+    --gemz-dark-navy: #13144a;
+    /* Velvety midnight canvas background (not pitch black) */
+
+    /* Structural Container Mattes */
+    --gemz-sapphire: #1f55a6;
+    /* Deep jewel-tone blue for card container borders */
+    --gemz-ocean: #00a7bb;
+    /* Vibrant high-energy cyan for interactive hover states */
+    --gemz-mist: #daf1f8;
+    /* Soft lavender-grey for small metadata subtitles */
+    --gemz-snow: #fdfeff;
+    /* Crisp, low-strain reading white for body paragraphs */
+
+    /* Global Interface Geometry Standards */
+    --gemz-radius-card: 12px;
+    /* Signature uniform curve radius for content cards */
+    --gemz-radius-btn: 8px;
+    /* Compact radius parameter for booking buttons */
+  }
+
+  /* The Canvases (60% Dominant Space) */
+  --color-canvas-light: #FBFBFA;
+  /* Clear Alabaster: Clean, tactile backdrop */
+  --color-canvas-dark: #2F2427;
+  /* Moody Espresso: Rich dark brown charcoal for sudden contrast */
+
+  /* The Structures (30% Secondary Layout) */
+  --color-logo-primary: #646059;
+  /* Soft Slate Grey: Organic, softer alternative to stark black */
+  --color-brand-teal: #0D7572;
+  /* Deep Coastal Teal: Intellectual jewel tone framework */
+  --color-brand-sage: #49BB9E;
+  /* Fresh Mint: Uplifting modern accent layout pop */
+
+  /* The Accents (10% Exclusive Highlights - Links, Buttons, Calls to Action) */
+  --color-brand-amber: #D89739;
+  /* Warm Marigold: Radiant optimized element highlight */
+  --color-brand-sienna: #B66028;
+  /* Bold Burnt Sienna: Earthy, energetic link anchor */
+
+  /* Text Overrides for Absolute Contrast */
+  --color-text-dark: #2F2427;
+  /* Rich body text on light backgrounds */
+  --color-text-light: #FBFBFA;
+  /* Pure body text on dark espresso sections */
+
+  /* ==========================================================================
+     3. Responsive Fluid Layout Constraints (The 12-Column Blueprint)
+     ========================================================================== */
+  --container-max-width: 1140px;
+  /* Matches 12 columns (72px) + 11 gutters (32px) */
+  --grid-gutter: 32px;
+  /* Locked spacing parameter from approved proposal */
+}
+
+/* ==========================================================================
+   4. Base CSS Architecture Reset & Baseline Enforcement
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  /* Industry baseline size for Helvetica Neue */
+  letter-spacing: var(--tracking-loose);
+  line-height: var(--line-height-body);
+  background-color: var(--color-canvas-light);
+  color: var(--color-text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   5. Global Typographic Elements Outlines
+   ========================================================================== */
+h1,
+h2,
+h3,
+.display-title {
+  font-family: var(--font-display);
+  color: var(--color-text-dark);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
+  /* Georgia Pro Bold / Black equivalent */
+}
+
+/* Target Styles for Specific Section Labels, Table Headers & Metadata */
+.label,
+.meta-text,
+th {
+  font-family: var(--font-body);
+  font-weight: 600;
+  /* Helvetica Neue 65 Medium equivalent */
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-meta);
+  font-size: 0.85rem;
+  /* Scaled down cleanly for visual hierarchy */
+}
+
+a {
+  color: var(--color-brand-sienna);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-brand-amber);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   5.a. Top Header Layout Spacing Adjustments
+   ========================================================================== */
+
+/* Gives the main title breathing room from the top artifact tag metadata row */
+h1 {
+  margin-top: 16px;
+  margin-bottom: 20px !important;
+}
+
+/* Spaces out the primary introductory paragraph before the sidebar columns begin */
+h1+p {
+  margin-bottom: 12px !important;
+}
+
+/* Eradicates the default browser top gap on the sub-heading */
+.sidebar-narrative h3,
+.narrative-sticky-box h3 {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+/* ==========================================================================
+   5.b.Dual-Track Lifecycle Header Rhythm Calibration
+   ========================================================================== */
+
+/* Gives the main lifecycle section title comfortable breathing room */
+.main-body-stream h2 {
+  margin-top: 0;
+  margin-bottom: 16px !important;
+}
+
+/* Spaces out the overview paragraph before the tracking modules begin */
+p.lifecycle-intro {
+  margin-top: 0;
+  margin-bottom: 36px !important;
+  /* Pushes the track modules down gracefully */
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   6. Structural Containers & Fluid Layout Wrapper Layouts
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 32px;
+  /* Protected fluid layout boundary padding */
+  padding-left: 32px;
+}
+
+/* ==========================================================================
+   7. Global Header Navigation Bar (Flexbox Layout Matrix)
+   ========================================================================== */
+.global-header {
+  background-color: #EFEFED;
+  /* Matte studio gray backdrop */
+  border-bottom: 1px solid rgba(100, 96, 89, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 15px 0;
+  /* Clear up browser ceiling gaps uniformly */
+}
+
+/* This is the missing link that forces your navigation to the right side */
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  /* Pushes logo left, navigation right */
+  align-items: center;
+  /* Vertically aligns items straight */
+  width: 100%;
+  max-width: var(--container-max-width);
+  /* Matches your 1140px site grid width */
+  margin: 0 auto;
+  /* Centers the header elements on screen */
+  padding: 0 32px;
+  /* Adds fluid boundary margins */
+}
+
+.brand-logo {
+  display: inline-block;
+}
+
+/* Safeguards your custom logo size so it fits elegantly */
+.nav-logo {
+  height: 100px;
+  /* Scale down from 100px so it isn't massive */
+  width: 240px;
+  /* REQUIRED FOR SVG: Forces the vector to render */
+  max-height: 100%;
+  display: block;
+}
+
+.logo-image {
+  height: 48px;
+  /* Perfectly scalable height mapping */
+  width: auto;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  /* Clean tracking gaps between navigation nodes */
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  letter-spacing: var(--tracking-neutral);
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: var(--color-brand-teal);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   8. Main Hero Component Layout (Whitespace Management Flow)
+   ========================================================================== */
+.hero-section {
+  padding-top: 120px;
+  /* Ruthlessly protected whitespace blocks to fight cramming */
+  padding-bottom: 120px;
+  background-color: var(--color-canvas-light);
+}
+
+.hero-content {
+  max-width: 960px;
+  /* Keeps elegant Georgia lines from spanning awkwardly wide */
+}
+
+.hero-section .display-title {
+  font-size: 2.85rem;
+  /* Premium high-end custom title layout sizing */
+  color: var(--color-text-dark);
+  margin-bottom: 24px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(47, 36, 39, 0.85);
+  /* Slightly softened Moody Espresso text shade */
+  max-width: 780px;
+}
+
+/* ==========================================================================
+   9. Portfolio Artifact Showcase Grid (12-Column Grid Engine)
+   ========================================================================== */
+.portfolio-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: rgba(100, 96, 89, 0.03);
+  /* Subtle backdrop hue shift */
+  border-top: 1px solid rgba(100, 96, 89, 0.08);
+}
+
+.portfolio-section .label {
+  color: var(--color-brand-teal);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  margin-bottom: 48px;
+}
+
+/* Fluid responsive CSS Grid architecture matching locked column proportions */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* 2-Column row structures layout on desktop */
+  column-gap: var(--grid-gutter);
+  /* Matches locked 32px portfolio specifications */
+  row-gap: 56px;
+  /* Comfortable open vertical tracking spaces */
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-canvas-light);
+  border: 1px solid rgba(100, 96, 89, 0.12);
+  padding: 24px;
+  border-radius: 4px;
+  /* Crisp, near-square professional studio card boundaries */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(47, 36, 39, 0.06);
+}
+
+.card-image-holder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  /* Fixed standard layout boundary proportions */
+  background-color: #EFEFED;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.card-image-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #F5F5F3;
+}
+
+.card-meta {
+  margin-bottom: 12px;
+}
+
+.card-meta .meta-text {
+  color: var(--color-brand-teal);
+  font-size: 0.8rem;
+}
+
+.card-title {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.card-excerpt {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(47, 36, 39, 0.8);
+  margin-bottom: 24px;
+  flex-grow: 1;
+  /* Pushes card actionable link neatly to base line boundary */
+}
+
+.card-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-brand-sienna);
+  align-self: flex-start;
+}
+
+/* ==========================================================================
+   10. Personal Identity Process Row (Asymmetric Flex Block Layout)
+   ========================================================================== */
+.about-brand-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: var(--color-canvas-dark);
+  /* Sudden high-contrast Dark Espresso Container */
+  color: var(--color-text-light);
+}
+
+.brand-narrative-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+}
+
+.narrative-text {
+  flex: 1;
+  max-width: 540px;
+}
+
+.about-brand-section h2 {
+  color: var(--color-text-light);
+  font-size: 2.25rem;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.about-brand-section p {
+  color: rgba(251, 251, 250, 0.85);
+  /* Highly visible light text configuration overlay */
+  margin-bottom: 32px;
+}
+
+.cta-link-button {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  background-color: var(--color-brand-amber);
+  /* Warm Marigold CTA anchor target pop */
+  color: var(--color-canvas-dark);
+  padding: 14px 28px;
+  letter-spacing: var(--tracking-neutral);
+  transition: background-color 0.2s ease;
+}
+
+.cta-link-button:hover {
+  background-color: var(--color-brand-sage);
+  /* Uplifting Sage hover transition */
+  text-decoration: none;
+}
+
+.narrative-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(251, 251, 250, 0.04);
+  /* Subtle glow frame context */
+  padding: 48px;
+  border: 1px solid rgba(251, 251, 250, 0.1);
+}
+
+.narrative-visual img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  /* Smoothly flips primary grey logo into white dynamically */
+}
+
+/* ==========================================================================
+   11. Global Footer System Strip
+   ========================================================================== */
+.global-footer {
+  background-color: #241B1D;
+  /* Deep midnight chocolate accent bar */
+  color: rgba(251, 251, 250, 0.6);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(251, 251, 250, 0.05);
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-meta-notes .meta-text {
+  color: var(--color-brand-sage);
+}
+
+/* ==========================================================================
+   12. Media Queries Breakdown (Fluid Downscale Infrastructure)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    /* Stack artifacts linearly for easier vertical scroll maps */
+    row-gap: 40px;
+  }
+
+  .brand-narrative-block {
+    flex-direction: column;
+    /* Collapses narrative panel side-by-side elements structurally */
+    gap: 48px;
+  }
+
+  .narrative-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-wrapper {
+    height: 80px;
+  }
+
+  .nav-list {
+    gap: 24px;
+  }
+
+  .hero-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .hero-section .display-title {
+    font-size: 2.2rem;
+  }
+
+  .footer-wrapper {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-list {
+    gap: 16px;
+  }
+
+  .portfolio-card {
+    padding: 16px;
+  }
+}
+
+/* ==========================================================================
+   13. Horizontal Rhythm & Element Spacing Enhancements
+   ========================================================================== */
+
+/* Standardizes the gap below the paragraph text before an asset begins */
+.stream-section .section-context,
+.stream-section p {
+  margin-bottom: 24px;
+}
+
+/* Controls the whitespace block below your image cards to match sections 3 and 4 */
+.document-page-card {
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+
+/* Eliminates extra stacking spaces on the last section element */
+.stream-section:last-of-type {
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   14. Project Metadata Directory Spacing Rules
+   ========================================================================== */
+
+/* Creates consistent vertical breathing room between your metadata items */
+.project-metadata-list {
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+/* Spaces out each individual item block down the sidebar column */
+.meta-item {
+  margin-bottom: 20px;
+}
+
+.meta-item:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Forces your labels to stack neatly above their descriptions */
+.meta-item .label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Cleans up the paragraph spacing inside your meta items */
+.meta-item p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   15. Artifact 1 Widescreen Responsive Scaling Matrix
+   ========================================================================== */
+.page-image-holder-widescreen {
+  background-color: var(--color-canvas-light);
+  border: 1px solid rgba(100, 96, 89, 0.12);
+  width: 100%;
+  overflow: hidden;
+  /* Cuts off any overflowing background pixels */
+  box-sizing: border-box;
+}
+
+.page-image-holder-widescreen img {
+  display: block;
+  width: 100%;
+  /* Forces the image width to snap exactly to your layout column */
+  max-width: 100%;
+  /* Strict ceiling check preventing horizontal page stretching */
+  height: auto;
+  /* Scales vertical height proportionally to keep your text unwarped */
+  object-fit: contain;
+  padding: 8px;
+}
+
+/* ==========================================================================
+   16. Artifact 2 Layout Matrix Components
+   ========================================================================== */
+.stream-section {
+  margin-bottom: 48px;
+}
+
+.stream-section h3 {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-brand-teal);
+  margin-bottom: 16px;
+  text-transform: none;
+  letter-spacing: var(--tracking-neutral);
+}
+
+.process-image-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.image-box-mock {
+  background-color: #EFEFED;
+  border: 1px solid rgba(100, 96, 89, 0.15);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.image-box-mock img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-figure figcaption {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-logo-primary);
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .process-image-grid-two {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ==========================================================================
+   17. Artifact 3 Architecture Framework Layout Elements
+   ========================================================================== */
+.architecture-single-preview {
+  margin-top: 32px;
+  width: 100%;
+}
+
+.image-box-architecture {
+  background-color: #EFEFED;
+  border: 1px solid rgba(100, 96, 89, 0.15);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  /* Clean widescreen aspect mapping for design grids */
+  overflow: hidden;
+}
+
+.image-box-architecture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   18. Artifact 4 Asymmetric Project Matrix System
+   ========================================================================== */
+.archive-project-row {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 72px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(100, 96, 89, 0.08);
+}
+
+.archive-project-row:last-of-type {
+  border-bottom: none;
+  margin-bottom: 24px;
+}
+
+.project-info {
+  flex: 1.1;
+  /* Asymmetric distribution favor to balance copy text elements */
+}
+
+.project-info .meta-text {
+  color: var(--color-brand-sienna);
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.project-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.project-visual-frame {
+  flex: 0.9;
+  background-color: #EFEFED;
+  border: 1px solid rgba(100, 96, 89, 0.15);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.project-visual-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Reverses the second block automatically to build alternating asymmetric layouts */
+.reverse-row {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+
+  .archive-project-row,
+  .reverse-row {
+    flex-direction: column;
+    gap: 32px;
+    align-items: stretch;
+  }
+}
+
+/* ==========================================================================
+   19. Artifact 5 Chronological Evolution Grid (4-Stage Layout Engine)
+   ========================================================================== */
+.evolution-grid-four {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Splits into an elegant 2x2 grid cell array */
+  gap: 32px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.evolution-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-canvas-light);
+  border: 1px solid rgba(100, 96, 89, 0.12);
+  padding: 16px;
+  border-radius: 2px;
+}
+
+.evolution-image-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* Fixed perfect square layout constraints for process icons */
+  background-color: #EFEFED;
+  border: 1px solid rgba(100, 96, 89, 0.08);
+  margin-bottom: 16px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.evolution-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Keeps vector asset lines sharp and completely uncropped */
+}
+
+.evolution-meta .meta-text {
+  color: var(--color-brand-teal);
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.evolution-meta h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.evolution-meta p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: rgba(47, 36, 39, 0.8);
+}
+
+/* Fluid scale down constraints for compact mobile viewing boundaries */
+@media (max-width: 576px) {
+  .evolution-grid-four {
+    grid-template-columns: 1fr;
+    /* Stacks cards in a single clean row on phone screens */
+    gap: 24px;
+  }
+}
+
+
+/* ==========================================================================
+   Bottom Content Buffer Spacing
+   ========================================================================== */
+
+/* Pushes the dark footer away from the final bibliography text block */
+main,
+.container:has(footer),
+body>*:last-child {
+  margin-bottom: 80px;
+}
+
+/* Alternative direct hook if those citations are inside a specific wrapper */
+.container {
+  padding-bottom: 40px;
+}
+
+/* Eradicates extra spacing on the very last citation entry */
+.container p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Global Section Description Paragraph Spacing Fix
+   ========================================================================== */
+
+/* Automatically pushes image cards down below generic narrative paragraphs */
+.stream-section p,
+.stream-section .section-context {
+  margin-bottom: 28px !important;
+}
+
+/* Adds clean separation between figure elements if they stack up */
+figure.document-page-card,
+.stream-section figure {
+  margin-top: 0;
+  margin-bottom: 48px !important;
+}
+
+/* ==========================================================================
+   Final Production Blueprint Micro-Adjustments
+   ========================================================================== */
+
+/* 1. Fixes the lowercase metadata text under the headers */
+.meta-item p,
+.project-metadata-list p,
+.meta-description {
+  text-transform: none !important;
+  /* Prevents description values from accidentally inheriting uppercase rules */
+}
+
+/* If you have a specific class on that DOCUMENT INTEGRITY CONTROL string, use this: */
+.document-integrity-label,
+span[style*="uppercase"] {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem !important;
+  letter-spacing: 0.08em !important;
+  color: var(--color-logo-primary) !important;
+  margin-bottom: 8px !important;
+}
+
+/* 3. Balances and centers your dark footer element columns */
+.global-footer .container,
+footer .footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Drops copyright and syllabus matrices into precise central stacks */
+  text-align: center;
+  gap: 12px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   13. Sub-Page Case Study Architecture (Split Column System)
+   ========================================================================== */
+.case-study-hero {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  background-color: var(--color-canvas-light);
+  border-bottom: 1px solid rgba(100, 96, 89, 0.1);
+}
+
+.case-study-intro-text {
+  font-size: 1.2rem;
+  color: rgba(47, 36, 39, 0.85);
+  max-width: 860px;
+  margin-top: 16px;
+}
+
+.case-study-content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #FBFBFA;
+}
+
+.content-wrapper-split {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.sidebar-narrative {
+  flex: 0 0 320px;
+  position: sticky;
+  top: 130px;
+  /* Locks beautifully below your sticky navigation bar */
+}
+
+.narrative-sticky-box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.narrative-sticky-box p {
+  font-size: 0.95rem;
+  color: rgba(47, 36, 39, 0.8);
+  margin-bottom: 32px;
+}
+
+.project-metadata-list {
+  border-top: 1px solid rgba(100, 96, 89, 0.15);
+  padding-top: 24px;
+  margin-bottom: 32px;
+}
+
+.meta-item {
+  margin-bottom: 20px;
+}
+
+.meta-item p {
+  font-weight: 500;
+  color: var(--color-text-dark);
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.main-body-stream {
+  flex: 1;
+}
+
+.main-body-stream h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.section-context {
+  font-size: 1.05rem;
+  color: rgba(47, 36, 39, 0.8);
+  margin-bottom: 48px;
+}
+
+/* ==========================================================================
+   14. Timeline Modular Component
+   ========================================================================== */
+.timeline-container {
+  position: relative;
+  border-left: 2px solid var(--color-brand-teal);
+  /* High contrast structural spine line */
+  padding-left: 32px;
+  margin-left: 8px;
+  margin-bottom: 56px;
+}
+
+.timeline-block {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-block::before {
+  content: '';
+  position: absolute;
+  left: -41px;
+  /* Centers dot over line cleanly */
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-canvas-light);
+  border: 3px solid var(--color-brand-teal);
+}
+
+.timeline-header {
+  margin-bottom: 12px;
+}
+
+.timeline-header .meta-text {
+  color: var(--color-brand-sienna);
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.timeline-header h3 {
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.timeline-org {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-logo-primary);
+}
+
+.timeline-body p {
+  font-size: 0.95rem;
+  color: rgba(47, 36, 39, 0.85);
+}
+
+/* ==========================================================================
+   15. Document Outlines Figures & Syllabus Bibliography Block
+   ========================================================================== */
+.artifact-caption-block {
+  margin-top: 48px;
+}
+
+.caption-divider {
+  height: 1px;
+  background-color: rgba(100, 96, 89, 0.2);
+  margin-bottom: 16px;
+}
+
+.artifact-caption-block figcaption {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-logo-primary);
+  line-height: 1.4;
+}
+
+.syllabus-references-section {
+  background-color: rgba(100, 96, 89, 0.04);
+  border-top: 1px solid rgba(100, 96, 89, 0.1);
+  padding-top: 64px;
+  padding-bottom: 84px;
+}
+
+.syllabus-references-section h2 {
+  font-size: 1.5rem;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.references-box {
+  background-color: var(--color-canvas-light);
+  border: 1px solid rgba(100, 96, 89, 0.12);
+  padding: 24px;
+  border-radius: 2px;
+}
+
+ .apa-reference-style {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  text-align: left;           /* Crucial: Prevents citations from centering */
+  padding-left: 2rem;         /* Creates room for hanging indent */
+  text-indent: -2rem;         /* Pulls the first line back out */
+  margin-top: 0;              /* Resets default margins */
+  margin-bottom: 1.25rem;     /* Snug spacing between multiple entries */
+}
+
+/* Eradicates extra spacing on the very last citation entry inside a box */
+.references-box .apa-reference-style:last-of-type {
+  margin-bottom: 0;
+}
+
+
+/*  ======================================================================== 
+    Responsive adjustment collapse for sub-pages 
+    ======================================================================== */
+@media (max-width: 992px) {
+  .content-wrapper-split {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .sidebar-narrative {
+    flex: none;
+    width: 100%;
+    position: static;
+  }
+}
+
+/* ==========================================================================
+   Interactive Graphic Expansion Engine (Pure CSS Lightbox)
+   ========================================================================== */
+
+/* Change cursor to a magnifying glass when hovering over the card images */
+.lightbox-trigger {
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.2s ease-in-out;
+}
+
+.lightbox-trigger:hover {
+  transform: scale(1.02);
+}
+
+/* The dark background overlay mask (hidden by default) */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(20, 20, 20, 0.95);
+  /* Deep dark background overlay */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Invisible background area that closes the view if the user clicks off the image */
+.lightbox-close-zone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-out;
+}
+
+/* Update this container to take up more of the screen width */
+.lightbox-content-box {
+  position: relative;
+  width: 95%;
+  /* Increased from 85% to give the inner contents more horizontal width */
+  max-width: 1400px;
+  /* Caps it gracefully so it doesn't pixelate on massive desktop screens */
+  max-height: 90%;
+  /* Increased from 80% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1001;
+}
+
+/* Force the image inside to expand and fill the available screen area */
+.lightbox-content-box img {
+  width: 100%;
+  /* FORCES TARGET SYSTEM TO EXPAND INSTEAD OF auto */
+  height: auto;
+  /* Preserves the vertical scale ratio perfectly */
+  max-height: 80vh;
+  /* Gives it maximum vertical room before bumping into the close button */
+  object-fit: contain;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+/* Close action button styling */
+.lightbox-close-btn {
+  margin-top: 16px;
+  color: #ffffff !important;
+  background-color: #A34E36;
+  /* Clean rust/sienna accent button color */
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  border-radius: 4px;
+}
+
+.lightbox-close-btn:hover {
+  background-color: #bd5b3f;
+}
+
+/* THE MAGIC: When clicked, change opacity to 1 and make it take over the screen */
+.lightbox-overlay:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 1. Style the link wrapper */
+.case-study-link {
+  display: inline-block;
+  overflow: hidden;
+  /* Keeps the image contained when it zooms */
+  border-radius: 4px;
+  /* Match this to any rounded corners you have */
+  background-color: #000;
+  /* Gives a subtle dark undertone if opacity changes */
+}
+
+/* 2. Style the thumbnail image inside the link */
+.case-study-link img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  cursor: zoom-in;
+  /* Changes the mouse cursor to a magnifying glass */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* Smooth animation */
+}
+
+/* 3. The Hover State Effect */
+.case-study-link:hover img {
+  transform: scale(1.04);
+  /* Elegantly zooms the image inward by 4% */
+  opacity: 0.9;
+  /* Softly dims it to signal interactivity */
+}
+
+/* Lightbox Background Overlay */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  /* Makes sure it sits on top of your navigation and grid */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(249, 249, 249, 0.98);
+  /* Blends with your clean off-white bg */
+  cursor: zoom-out;
+  /* Universal cue: click anywhere to go back */
+  align-items: center;
+  justify-content: center;
+}
+
+/* The High-Res Image Inside */
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  /* Clean modern shadow */
+  animation: fadeIn 0.25s ease;
+}
+
+/* Close Button (X) in top corner */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #111;
+  font-size: 40px;
+  font-weight: 300;
+  transition: 0.2s;
+}
+
+.lightbox-close:hover {
+  color: #999;
+  cursor: pointer;
+}
+
+/* Smooth Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.figure-caption-box {
+  margin-top: 12px;
+  font-family: inherit;
+  /* Inherits your portfolio font */
+  font-size: 0.9rem;
+  color: #555;
+  text-align: left;
+}
+
+.figure-label {
+  font-weight: bold;
+  /* APA standard: Figure numbers are bold */
+  margin-bottom: 2px;
+}
+
+/* --- About Page Structural Columns --- */
+.about-grid-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; /* Keeps your great editorial scaling */
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  align-items: center;
+  
+  /* ADD THIS LINE HERE: This forces the columns to flip order visually! */
+  direction: rtl; 
+}
+
+/* This resets the text reading inside the container so it stays left-to-right */
+.about-grid-layout > * {
+  direction: ltr;
+}
+
+.about-visual-pane {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Restricts the compilation layout sizing */
+.about-brand-asset {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: contain;
+}
+
+/* Spacing out the typography panels */
+.about-narrative-pane h1 {
+  font-family: var(--font-editorial);
+  color: var(--color-moody-espresso);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-narrative-pane p {
+  font-family: var(--font-functional);
+  color: var(--color-slate-grey);
+  margin-bottom: 1.2rem;
+}
+
+/* Style to keep it subtle and unobtrusive */
+.academic-compliance-block {
+  border-top: 1px solid var(--color-slate-grey);
+  margin-top: 4rem;
+  padding-top: 2rem;
+  opacity: 0.6;
+  font-size: 0.85rem;
+}
