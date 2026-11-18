@@ -1375,6 +1375,17 @@ footer p {
   direction: ltr;
 }
 
+/* --- Mobile Fix for About Page Grid --- */
+@media (max-width: 768px) {
+  .about-grid-layout {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 2rem;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+  }
+}
+
 .about-visual-pane {
   display: flex;
   justify-content: center;
